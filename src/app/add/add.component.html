@@ -1,0 +1,89 @@
+
+  <form [formGroup]="addForm"   >
+
+    <label><b>UserName</b></label>
+        <input type="text" placeholder="Enter UserName" formControlName="username" required ><br>
+        <div
+        *ngIf="addForm.get('username').invalid && (addForm.get('username').dirty || addForm.get('username').touched)"
+        class="alert alert-danger">
+        username is required.
+      </div>
+    <label><b>Password</b></label>
+    <input type="text" placeholder="Enter Password" formControlName="password" required ><br>
+    <div
+        *ngIf="addForm.get('password').invalid && (addForm.get('password').dirty || addForm.get('password').touched)"
+        class="alert alert-danger">
+        password is required.
+      </div>
+
+    <label ><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" formControlName="firstName" required ><br>
+
+    <div
+        *ngIf="addForm.get('firstName').invalid && (addForm.get('firstName').dirty || addForm.get('firstName').touched)"
+        class="alert alert-danger">
+        firstName is required.
+      </div>
+
+    <label ><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last name" formControlName="lastName" required ><br>
+
+    <div
+    *ngIf="addForm.get('lastName').invalid && (addForm.get('lastName').dirty || addForm.get('lastName').touched)"
+    class="alert alert-danger">
+    lastName is required.
+  </div>
+
+    <label ><b>State</b></label>
+    <input type="text" placeholder="Enter State" formControlName="state" required ><br>
+    <div
+    *ngIf="addForm.get('state').invalid && (addForm.get('state').dirty || addForm.get('state').touched)"
+    class="alert alert-danger">
+    state is required.
+  </div>
+
+    <label><b>City</b></label>
+    <input type="text" placeholder="Enter City" formControlName="city" required ><br>
+    <div
+    *ngIf="addForm.get('city').invalid && (addForm.get('city').dirty || addForm.get('city').touched)"
+    class="alert alert-danger">
+    city is required.
+  </div>
+
+    <label ><b>Phonenumber</b></label>
+    <input type="text" placeholder="Enter phone" formControlName="phoneNumber" required >
+    <div
+    *ngIf="addForm.get('phoneNumber').invalid && (addForm.get('phoneNumber').dirty || addForm.get('phoneNumber').touched)"
+    class="alert alert-danger">
+    Invalid phoneNumber 
+  </div>
+
+    <label *ngIf="!show"><b>weight</b></label>
+    <input *ngIf="!show" type="text" placeholder="Enter weight" formControlName="weight" required >
+    <div
+    *ngIf="addForm.get('weight').invalid && (addForm.get('weight').dirty || addForm.get('weight').touched)"
+    class="alert alert-danger">
+    weight is required.
+  </div>
+    <label *ngIf="!show"><b>bloodGroup</b></label>
+    <input *ngIf="!show" type="text" placeholder="Enter bloodGroup" formControlName="bloodGroup" required >
+    <div
+    *ngIf="addForm.get('bloodGroup').invalid && (addForm.get('bloodGroup').dirty || addForm.get('bloodGroup').touched)"
+    class="alert alert-danger">
+    Invalid BloodGroup can enter only A+,A-,B+,B-,O+,O-
+  </div>
+    
+    <label *ngIf="show"><b>specilization</b></label>
+    <input *ngIf="show" type="text" placeholder="Enter specilization" formControlName="specilization" required >
+    <div
+    *ngIf="addForm.get('specilization').invalid && (addForm.get('specilization').dirty || addForm.get('specilization').touched)"
+    class="alert alert-danger">
+    specilization is required.
+  </div>
+    <button  *ngIf="show" type="submit" class="registerbtn" (click) = "AddDoctor()">Add Doctor</button>
+
+    
+    <button *ngIf="!show" type="submit" class="registerbtn" (click) = "AddPatient()">Add Patient</button>
+    
+ </form>
+ 

@@ -1,0 +1,56 @@
+
+  <div class="container">
+      <form  [formGroup]="updateForm" (ngSubmit)="update()">
+  
+      <label><b>Password</b></label>
+      <input type="text" placeholder="Enter Password" formControlName="password" required><br>
+      <div
+      *ngIf="updateForm.get('password').invalid && (updateForm.get('password').dirty || updateForm.get('password').touched)"
+      class="alert alert-danger">
+      Password is required.
+    </div>
+
+      <label ><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" formControlName="firstName" required><br>
+      <div
+      *ngIf="updateForm.get('firstName').invalid && (updateForm.get('firstName').dirty || updateForm.get('firstName').touched)"
+      class="alert alert-danger">
+      FirstName is required.
+    </div>
+
+      <label ><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last name" formControlName="lastName" required><br>
+      <div
+      *ngIf="updateForm.get('lastName').invalid && (updateForm.get('lastName').dirty || updateForm.get('lastName').touched)"
+      class="alert alert-danger">
+      lastName is required.
+    </div>
+
+      <label ><b>State</b></label>
+      <input type="text" placeholder="Enter State" formControlName="state" required><br>
+      <div
+      *ngIf="updateForm.get('state').invalid && (updateForm.get('state').dirty || updateForm.get('state').touched)"
+      class="alert alert-danger">
+      State is required.
+    </div>
+
+      <label><b>City</b></label>
+      <input type="text" placeholder="Enter City" formControlName="city" required><br>
+      <div
+      *ngIf="updateForm.get('city').invalid && (updateForm.get('city').dirty || updateForm.get('city').touched)"
+      class="alert alert-danger">
+      City is required.
+    </div>
+
+      <label ><b>Phonenumber</b></label>
+      <input type="text" placeholder="Enter phone" formControlName="phoneNumber" required>
+      <div *ngIf="updateForm.get('phoneNumber').invalid && (updateForm.get('phoneNumber').dirty || updateForm.get('phoneNumber').touched)" class="alert">
+      PhoneNumber is required.
+    </div>
+    
+      <button type="submit" class="registerbtn">Update</button>
+    
+      </form>
+    </div>
+    
+   

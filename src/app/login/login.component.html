@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container">
+  <div class="center">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <label for="name"><b>UserName</b></label>
+      <input type="text" placeholder="Enter Name" formControlName="UserName">
+
+      <div
+        *ngIf="loginForm.get('UserName').invalid && (loginForm.get('UserName').dirty || loginForm.get('UserName').touched)"
+        class="alert alert-danger">
+        UserName is required.
+      </div>
+
+      <br><br>
+      <label for="psw"><b>Password</b></label>
+      <input type="text" placeholder="Enter Password" formControlName="Password">
+      <div
+        *ngIf="loginForm.get('Password').invalid && (loginForm.get('Password').dirty || loginForm.get('Password').touched)"
+        class="alert alert-danger">
+        Password is required.
+      </div>
+      <br><br>
+      <button class="registerbtn" type="submit">Login</button>
+    </form>
+  </div>
+</div>

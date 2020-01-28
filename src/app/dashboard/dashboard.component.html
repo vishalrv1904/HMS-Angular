@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div class="button">
+   
+    <button  id="add" (click)="addpatient()">Add Patient</button>
+    <button (click)="listpatient()" id="patient" >Patient</button>
+<button (click)="listdoctor()" id="doctor">Doctor</button>
+<button  id="add" (click)="adddoctor()">Add Doctor</button>
+</div>
+<app-user  [listData]="listData" (delData)="delDataList($event)"></app-user>

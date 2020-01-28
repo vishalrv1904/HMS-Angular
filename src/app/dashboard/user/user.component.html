@@ -1,0 +1,14 @@
+<div *ngIf="listData!=null">
+<div class="flex-container">
+<div *ngFor="let data of listData">
+    <div class="card">
+        <div class="container">
+            <div >FirstName : {{data.firstName}}</div><div >LastName : {{data.lastName}}</div> <div *ngIf="data.specilization!=null" >Specilization: {{data.specilization}}</div>
+            <div *ngIf="data.bloodGroup!=null" >BloodGroup : {{data.bloodGroup}}</div>
+            <a href="/update/{{data.id}}" class="button update">Update</a>
+<a class="button" (click)="delete(data.id)">Delete</a>
+        </div>
+      </div>
+</div>
+</div>
+</div>
