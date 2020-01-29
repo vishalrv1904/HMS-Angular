@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserserviceService } from './userservice.service';
 import { UpdateComponent } from './update/update.component';
 import { AddComponent } from './add/add.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { AddComponent } from './add/add.component';
     HeaderComponent,
     UserComponent,
     UpdateComponent,
-    AddComponent
+    AddComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   providers: [UserserviceService],
   bootstrap: [AppComponent]

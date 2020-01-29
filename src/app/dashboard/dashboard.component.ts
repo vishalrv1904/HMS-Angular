@@ -11,7 +11,7 @@ import { user } from '../user';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private _Activatedroute: ActivatedRoute, private userservice: UserserviceService, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private userservice: UserserviceService, private router: Router) { }
 
   listData: Array<user>;
   dummyData: Array<user> = new Array<user>();
@@ -25,8 +25,8 @@ export class DashboardComponent implements OnInit {
   }
   delDataList(id: number) {
 
-    for (let data of this.listData) {
-      if (data.id != id) {
+    for (const data of this.listData) {
+      if (data.id !== id) {
         this.dummyData.push(data);
       }
     }
@@ -35,29 +35,29 @@ export class DashboardComponent implements OnInit {
   }
 
   listpatient() {
-    document.getElementById("doctor").style.backgroundImage = "none";
-    document.getElementById("patient").style.backgroundImage = "linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))";
-    this.userservice.patientData.subscribe((data) => { this.listData = data.message; console.log(this.listData) });
+    document.getElementById('doctor').style.backgroundImage = 'none';
+    document.getElementById('patient').style.backgroundImage = 'linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))';
+    this.userservice.patientData.subscribe((data) => { this.listData = data.message; console.log(this.listData); });
 
   }
 
   listdoctor() {
-    document.getElementById("patient").style.backgroundImage = "none";
-    document.getElementById("doctor").style.backgroundImage = "linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))";
+    document.getElementById('patient').style.backgroundImage = 'none';
+    document.getElementById('doctor').style.backgroundImage = 'linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))';
     this.listData = this.userservice.listOfDoctor;
-    this.userservice.doctorData.subscribe((data) => { this.listData = data.message });
+    this.userservice.doctorData.subscribe((data) => { this.listData = data.message; });
   }
 
   update() {
-    this.router.navigateByUrl("/update");
+    this.router.navigateByUrl('/update');
   }
 
   addpatient() {
-    this.router.navigateByUrl("/add/patient");
+    this.router.navigateByUrl('/add/patient');
   }
 
   adddoctor() {
-    this.router.navigateByUrl("/add/doctor");
+    this.router.navigateByUrl('/add/doctor');
   }
 
 }

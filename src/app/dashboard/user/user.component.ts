@@ -9,23 +9,22 @@ import { EventEmitter } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private userservice:UserserviceService) { }
+  constructor(private userservice: UserserviceService) { }
 
-  @Input() listData :Array<any>;
-  
-  @Output() delData=new EventEmitter<number>();
+  @Input() listData: Array<any>;
+
+  @Output() delData = new EventEmitter<number>();
 
   ngOnInit() {
-   
+
   }
 
-  
 
-  delete(id:number)
-  {
-    this.userservice.deleteData(id).subscribe((data)=>{ console.log("Data Deleted");});
+
+  delete(id: number) {
+    this.userservice.deleteData(id).subscribe((data) => { console.log('Data Deleted'); });
     this.delData.emit(id);
-    
+
   }
 
 }

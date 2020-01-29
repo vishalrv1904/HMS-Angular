@@ -72,15 +72,24 @@
     color: dodgerblue;
   }
   
-  /* Set a grey background color and center the text of the "sign in" section */
-  .signin {
-    background-color: #f1f1f1;
-    text-align: center;
-  }
+  
 
   .alert {
     padding: 10px;
     background-color: #EE8E87;
     color: white;
     border-radius: 10px;
+  }
+  @media (max-width: 700px) {
+    .container {
+      width: 100%;
+    }
+    .center
+    {
+      width: 100%;
+      padding: 10px;
+    }
+    form{
+      width:100%;
+    }
   }

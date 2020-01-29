@@ -11,31 +11,34 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor(private _Activatedroute: ActivatedRoute, private userservice: UserserviceService, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private userservice: UserserviceService, private router: Router) { }
   userId: number;
 
   updateForm = new FormGroup({
-    id: new FormControl(''), password: new FormControl(''), phoneNumber: new FormControl(''), firstName: new FormControl(''), lastName: new FormControl(''), city: new FormControl(''), state: new FormControl('')
+    id: new FormControl(''), password: new FormControl(''),
+     phoneNumber: new FormControl(''), firstName: new FormControl(''),
+      lastName: new FormControl(''), city: new FormControl(''), state: new FormControl('')
 
   });
 
 
   ngOnInit() {
-    this.userId = parseInt(this._Activatedroute.snapshot.paramMap.get("id"));
+    // tslint:disable-next-line: radix
+    this.userId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
   }
 
   update() {
 
     if (this.updateForm.invalid) {
-      return ;
-  
-  }
+      return;
+
+    }
     this.updateForm.patchValue({
-      id : this.userId
+      id: this.userId
     });
     this.userservice.updateData(this.updateForm.value).subscribe((data) => {
       console.log(data);
-      this.router.navigateByUrl("/dashboard");
+      this.router.navigateByUrl('/dashboard');
     });
   }
 
